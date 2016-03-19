@@ -21,5 +21,6 @@ Scene* FightScene::createScene()
     
     // return the scene
     return scene;
+    //添加到github
 }
 
