@@ -1,6 +1,10 @@
 #include "HelloWorldScene.h"
+#include "HttpClient.h"
+#include "SignLayer.hpp"
 
 USING_NS_CC;
+using namespace cocos2d::network;
+
 
 Scene* HelloWorld::createScene()
 {
@@ -36,13 +40,18 @@ bool HelloWorld::init()
 
     // add a "close" icon to exit the progress. it's an autorelease object
     auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
+                                           "scv_button.png",
                                            "CloseSelected.png",
-                                           CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+                                           CC_CALLBACK_1(HelloWorld::menuScvCallback, this));
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
                                 origin.y + closeItem->getContentSize().height/2));
 
+    auto itemScv = MenuItemImage::create(
+                                           "scv_button.png.png",
+                                           "CloseSelected.png",
+                                           CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+    
     // create menu, it's an autorelease object
     auto menu = Menu::create(closeItem, NULL);
     menu->setPosition(Vec2::ZERO);
@@ -70,17 +79,37 @@ bool HelloWorld::init()
     sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
     // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
+    //this->addChild(sprite, 0);
     
     return true;
 }
 
+void HelloWorld::menuScvCallback(cocos2d::Ref* pSender)
+{
+    SignLayer* signLayer = SignLayer::create();
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    signLayer->setPosition(Vec2(visibleSize.width/2 , visibleSize.height/2));
+    this->addChild(signLayer,100000);
+}
 
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {
-    Director::getInstance()->end();
+//    测试网络
+    {
+        HttpRequest* request = new (std::nothrow) HttpRequest();
+        request->setUrl("http://192.168.0.105:2345/");
+        request->setRequestType(HttpRequest::Type::GET);
+//        request->setResponseCallback(CC_CALLBACK_2(HttpClientTest::onHttpRequestCompleted, this));
+    
+        request->setTag("GET immediate test1");
+        HttpClient::getInstance()->sendImmediate(request);
+  
+        request->release();
+    }
+    
+//    Director::getInstance()->end();
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    exit(0);
+//    exit(0);
 #endif
 }

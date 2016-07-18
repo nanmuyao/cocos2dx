@@ -11,7 +11,9 @@
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		2288F3401C9D52F400EC1A2B /* FIghtScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2288F33E1C9D52F400EC1A2B /* FIghtScene.cpp */; };
+		22408E1E1D3A04B100552843 /* SignLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22408E1C1D3A04B100552843 /* SignLayer.cpp */; };
+		22408E221D3A13B000552843 /* scv_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 22408E211D3A13B000552843 /* scv_button.png */; };
+		22408E241D3A3C9900552843 /* twrriter.png in Resources */ = {isa = PBXBuildFile; fileRef = 22408E231D3A3C9900552843 /* twrriter.png */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
@@ -107,8 +109,10 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* MyAngryBird iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyAngryBird iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2288F33E1C9D52F400EC1A2B /* FIghtScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FIghtScene.cpp; sourceTree = "<group>"; };
-		2288F33F1C9D52F400EC1A2B /* FIghtScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FIghtScene.hpp; sourceTree = "<group>"; };
+		22408E1C1D3A04B100552843 /* SignLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SignLayer.cpp; sourceTree = "<group>"; };
+		22408E1D1D3A04B100552843 /* SignLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SignLayer.hpp; sourceTree = "<group>"; };
+		22408E211D3A13B000552843 /* scv_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scv_button.png; sourceTree = "<group>"; };
+		22408E231D3A3C9900552843 /* twrriter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twrriter.png; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
@@ -279,6 +283,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				22408E231D3A3C9900552843 /* twrriter.png */,
+				22408E211D3A13B000552843 /* scv_button.png */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
@@ -296,8 +302,8 @@
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
-				2288F33E1C9D52F400EC1A2B /* FIghtScene.cpp */,
-				2288F33F1C9D52F400EC1A2B /* FIghtScene.hpp */,
+				22408E1C1D3A04B100552843 /* SignLayer.cpp */,
+				22408E1D1D3A04B100552843 /* SignLayer.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -462,10 +468,12 @@
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
+				22408E241D3A3C9900552843 /* twrriter.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
+				22408E221D3A13B000552843 /* scv_button.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
@@ -496,8 +504,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22408E1E1D3A04B100552843 /* SignLayer.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				2288F3401C9D52F400EC1A2B /* FIghtScene.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
