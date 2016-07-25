@@ -1,6 +1,7 @@
 #include "HelloWorldScene.h"
 #include "HttpClient.h"
 #include "SignLayer.hpp"
+#include "World.hpp"
 
 USING_NS_CC;
 using namespace cocos2d::network;
@@ -86,10 +87,13 @@ bool HelloWorld::init()
 
 void HelloWorld::menuScvCallback(cocos2d::Ref* pSender)
 {
-    SignLayer* signLayer = SignLayer::create();
-    Size visibleSize = Director::getInstance()->getVisibleSize();
-    signLayer->setPosition(Vec2(visibleSize.width/2 , visibleSize.height/2));
-    this->addChild(signLayer,100000);
+//    SignLayer* signLayer = SignLayer::create();
+//    Size visibleSize = Director::getInstance()->getVisibleSize();
+//    signLayer->setPosition(Vec2(visibleSize.width/2 , visibleSize.height/2));
+//    this->addChild(signLayer,100000);
+    
+    auto scene = World::create();
+    Director::getInstance()->replaceScene(scene);
 }
 
 void HelloWorld::menuCloseCallback(Ref* pSender)

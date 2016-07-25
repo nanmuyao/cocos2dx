@@ -8,6 +8,7 @@
 
 #include "SignLayer.hpp"
 #include "CCLayer.h"
+
 using namespace cocos2d::ui;
 
 bool SignLayer::init()

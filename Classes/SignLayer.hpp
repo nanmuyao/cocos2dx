@@ -16,11 +16,10 @@
 using namespace cocos2d;
 using namespace cocos2d::ui;
 
-#endif /* SignLayer_hpp */
-
 class SignLayer : public Node
 {
 public:
+    void test();
     SignLayer(){};
     ~SignLayer(){};
     CREATE_FUNC(SignLayer);
@@ -35,6 +34,10 @@ public:
     void setData();
 private:
     ScrollView *m_Scv;
-//    TableView tableView;
+    //    TableView tableView;
     
 };
+
+#endif /* SignLayer_hpp */
+
+

@@ -14,6 +14,8 @@
 		22408E1E1D3A04B100552843 /* SignLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22408E1C1D3A04B100552843 /* SignLayer.cpp */; };
 		22408E221D3A13B000552843 /* scv_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 22408E211D3A13B000552843 /* scv_button.png */; };
 		22408E241D3A3C9900552843 /* twrriter.png in Resources */ = {isa = PBXBuildFile; fileRef = 22408E231D3A3C9900552843 /* twrriter.png */; };
+		227AF64B1D4642EA006BF1AE /* Hero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227AF6491D4642EA006BF1AE /* Hero.cpp */; };
+		227AF64E1D46431D006BF1AE /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227AF64C1D46431D006BF1AE /* World.cpp */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
@@ -113,6 +115,10 @@
 		22408E1D1D3A04B100552843 /* SignLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SignLayer.hpp; sourceTree = "<group>"; };
 		22408E211D3A13B000552843 /* scv_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scv_button.png; sourceTree = "<group>"; };
 		22408E231D3A3C9900552843 /* twrriter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twrriter.png; sourceTree = "<group>"; };
+		227AF6491D4642EA006BF1AE /* Hero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hero.cpp; sourceTree = "<group>"; };
+		227AF64A1D4642EA006BF1AE /* Hero.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Hero.hpp; sourceTree = "<group>"; };
+		227AF64C1D46431D006BF1AE /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = World.cpp; sourceTree = "<group>"; };
+		227AF64D1D46431D006BF1AE /* World.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = World.hpp; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
@@ -304,6 +310,10 @@
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 				22408E1C1D3A04B100552843 /* SignLayer.cpp */,
 				22408E1D1D3A04B100552843 /* SignLayer.hpp */,
+				227AF6491D4642EA006BF1AE /* Hero.cpp */,
+				227AF64A1D4642EA006BF1AE /* Hero.hpp */,
+				227AF64C1D46431D006BF1AE /* World.cpp */,
+				227AF64D1D46431D006BF1AE /* World.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -506,7 +516,9 @@
 			files = (
 				22408E1E1D3A04B100552843 /* SignLayer.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				227AF64E1D46431D006BF1AE /* World.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				227AF64B1D4642EA006BF1AE /* Hero.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
