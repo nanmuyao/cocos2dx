@@ -16,6 +16,7 @@ using namespace cocos2d::ui;
 bool World::init()
 {
     createBG();
+    scheduleUpdate();
     return true;
 }
 
@@ -35,3 +36,4 @@ void World::update(float t)
 {
     CCLOG("%s","fuck you");
 }
+

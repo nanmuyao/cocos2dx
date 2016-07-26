@@ -16,6 +16,8 @@
 		22408E241D3A3C9900552843 /* twrriter.png in Resources */ = {isa = PBXBuildFile; fileRef = 22408E231D3A3C9900552843 /* twrriter.png */; };
 		227AF64B1D4642EA006BF1AE /* Hero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227AF6491D4642EA006BF1AE /* Hero.cpp */; };
 		227AF64E1D46431D006BF1AE /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227AF64C1D46431D006BF1AE /* World.cpp */; };
+		227AF6511D465018006BF1AE /* LifeBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227AF64F1D465018006BF1AE /* LifeBody.cpp */; };
+		227AF6541D47AFB2006BF1AE /* Command.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227AF6521D47AFB2006BF1AE /* Command.cpp */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
@@ -119,6 +121,10 @@
 		227AF64A1D4642EA006BF1AE /* Hero.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Hero.hpp; sourceTree = "<group>"; };
 		227AF64C1D46431D006BF1AE /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = World.cpp; sourceTree = "<group>"; };
 		227AF64D1D46431D006BF1AE /* World.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = World.hpp; sourceTree = "<group>"; };
+		227AF64F1D465018006BF1AE /* LifeBody.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LifeBody.cpp; sourceTree = "<group>"; };
+		227AF6501D465018006BF1AE /* LifeBody.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LifeBody.hpp; sourceTree = "<group>"; };
+		227AF6521D47AFB2006BF1AE /* Command.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Command.cpp; sourceTree = "<group>"; };
+		227AF6531D47AFB2006BF1AE /* Command.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Command.hpp; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
@@ -314,6 +320,10 @@
 				227AF64A1D4642EA006BF1AE /* Hero.hpp */,
 				227AF64C1D46431D006BF1AE /* World.cpp */,
 				227AF64D1D46431D006BF1AE /* World.hpp */,
+				227AF64F1D465018006BF1AE /* LifeBody.cpp */,
+				227AF6501D465018006BF1AE /* LifeBody.hpp */,
+				227AF6521D47AFB2006BF1AE /* Command.cpp */,
+				227AF6531D47AFB2006BF1AE /* Command.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -518,10 +528,12 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				227AF64E1D46431D006BF1AE /* World.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				227AF6511D465018006BF1AE /* LifeBody.cpp in Sources */,
 				227AF64B1D4642EA006BF1AE /* Hero.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				227AF6541D47AFB2006BF1AE /* Command.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
