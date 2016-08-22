@@ -18,9 +18,12 @@ public:
     World(){};
     ~World(){};
     CREATE_FUNC(World);
+    
     bool init();
     virtual void update(float dt) override;
     void createBG();
+    void setCard();
+    void setPerson();
 private:
     int sizeX;
     int sizeY;

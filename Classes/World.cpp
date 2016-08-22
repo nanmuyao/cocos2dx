@@ -10,6 +10,7 @@
 #include "World.hpp"
 #include "CCLayer.h"
 #include "ui/UIlayout.h"
+#include "Card.hpp"
 
 using namespace cocos2d::ui;
 
@@ -17,6 +18,7 @@ bool World::init()
 {
     createBG();
     scheduleUpdate();
+    setCard();
     return true;
 }
 
@@ -32,8 +34,21 @@ void World::createBG()
     this->addChild(layout);
 }
 
+void World::setCard()
+{
+    auto card = Card::create();
+    card->setAnchorPoint(Vec2(0.0f, 0.0f));
+    card->setPosition(100, 100);
+    this->addChild(card);
+}
+
+void World::setPerson()
+{
+    
+}
+
 void World::update(float t)
 {
-    CCLOG("%s","fuck you");
+    //CCLOG("%s","fuck you");
 }
 
