@@ -24,9 +24,8 @@ class Card : public CCLayer
 {
 public:
     CREATE_FUNC(Card);
-    
     bool init() override;
-    void setNum(int Num);
+    void setCard(int color,int num);
     
 private:
     int num;

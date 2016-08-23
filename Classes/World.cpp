@@ -10,9 +10,19 @@
 #include "World.hpp"
 #include "CCLayer.h"
 #include "ui/UIlayout.h"
-#include "Card.hpp"
 
 using namespace cocos2d::ui;
+
+World::World()
+:cardPool(NULL)
+{
+    
+}
+
+World::~World()
+{
+    
+}
 
 bool World::init()
 {
@@ -36,10 +46,13 @@ void World::createBG()
 
 void World::setCard()
 {
-    auto card = Card::create();
-    card->setAnchorPoint(Vec2(0.0f, 0.0f));
-    card->setPosition(100, 100);
-    this->addChild(card);
+//    auto card = Card::create();
+//    card->setAnchorPoint(Vec2(0.0f, 0.0f));
+//    card->setPosition(100, 100);
+//    this->addChild(card);
+    cardPool = CardPool::create();
+    cardPool->setPool();
+    int a = 1;
 }
 
 void World::setPerson()

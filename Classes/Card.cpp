@@ -30,7 +30,7 @@ bool Card::init()
     return true;
 }
 
-void Card::setNum(int num)
+void Card::setCard(int color,int num)
 {
     num = num;
 }

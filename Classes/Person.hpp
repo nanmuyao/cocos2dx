@@ -25,6 +25,7 @@ public:
     void setCard(const Vector<Card*> &v_card);
     
     void playCard();
+    
 private:
     std::vector<Card *> m_Vec_Card;
 };

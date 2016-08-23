@@ -10,16 +10,18 @@
 #define World_hpp
 
 #include <stdio.h>
+#include "CardPool.hpp"
+
 using namespace cocos2d;
 
 class World : public Scene
 {
 public:
-    World(){};
-    ~World(){};
+    World();
+    ~World();
     CREATE_FUNC(World);
     
-    bool init();
+    bool init() override;
     virtual void update(float dt) override;
     void createBG();
     void setCard();
@@ -28,6 +30,7 @@ private:
     int sizeX;
     int sizeY;
     Layer* layer;
+    CardPool *cardPool;
 };
 
 #endif /* World_hpp */
