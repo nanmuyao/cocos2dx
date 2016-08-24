@@ -32,5 +32,7 @@ bool Card::init()
 
 void Card::setCard(int color,int num)
 {
-    num = num;
+    cardNum = num;
+    cardColor = color;
 }
+

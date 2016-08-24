@@ -26,6 +26,9 @@ public:
     void createBG();
     void setCard();
     void setPerson();
+    
+    std::vector<int> getRandom(int total);
+    
 private:
     int sizeX;
     int sizeY;

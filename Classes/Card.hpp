@@ -26,10 +26,10 @@ public:
     CREATE_FUNC(Card);
     bool init() override;
     void setCard(int color,int num);
-    
-private:
-    int num;
-    int colorCard;
+
+public:
+    int cardNum;
+    int cardColor;
 };
 
 #endif /* Card_hpp */

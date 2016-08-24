@@ -20,8 +20,8 @@ public:
     CREATE_FUNC(CardPool);
     bool init();
     void setPool();
+    void setXiPai();
 private:
-    
     Vector<Card *> m_Vec_Card;
 };
 

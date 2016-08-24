@@ -10,24 +10,24 @@
 #define Person_hpp
 
 #include <stdio.h>
-#include <vector>
 #include <Card.hpp>
 
 using namespace cocos2d;
+using namespace std;
 
-class Person : public Layer
+class Person : public Node
 {
 public:
+    Person();
+    ~Person();
     CREATE_FUNC(Person);
-    bool init();
+    bool init() override;
     void showResult();
-    
-    void setCard(const Vector<Card*> &v_card);
-    
+    void setCard(Card* card);
     void playCard();
     
 private:
-    std::vector<Card *> m_Vec_Card;
+    Vector<Card *> m_Vec_Card;
 };
 
 #endif /* Person_hpp */
