@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "CardPool.hpp"
+#include "Person.hpp"
 
 using namespace cocos2d;
 
@@ -26,7 +27,6 @@ public:
     void createBG();
     void setCard();
     void setPerson();
-    
     std::vector<int> getRandom(int total);
     
 private:
@@ -34,6 +34,9 @@ private:
     int sizeY;
     Layer* layer;
     CardPool *cardPool;
+    Person *personA;
+    Person *personB;
+    Person *personC;
 };
 
 #endif /* World_hpp */

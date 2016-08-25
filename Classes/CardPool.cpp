@@ -21,7 +21,6 @@ bool CardPool::init()
 
 void CardPool::setPool()
 {
-
     int color = 0;
     for (int i = 1; i <= MaxCardNum; i++) {
         Card *card = Card::create();

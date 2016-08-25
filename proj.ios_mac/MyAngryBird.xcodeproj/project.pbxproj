@@ -11,6 +11,9 @@
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		220E330C1D6C93B7006DBE0F /* CardPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 220E330A1D6C93B7006DBE0F /* CardPool.cpp */; };
+		22198DEA1D6B3ADC005156B4 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22198DE81D6B3ADC005156B4 /* Card.cpp */; };
+		22198DED1D6B416A005156B4 /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22198DEB1D6B416A005156B4 /* Person.cpp */; };
 		22408E1E1D3A04B100552843 /* SignLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22408E1C1D3A04B100552843 /* SignLayer.cpp */; };
 		22408E221D3A13B000552843 /* scv_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 22408E211D3A13B000552843 /* scv_button.png */; };
 		22408E241D3A3C9900552843 /* twrriter.png in Resources */ = {isa = PBXBuildFile; fileRef = 22408E231D3A3C9900552843 /* twrriter.png */; };
@@ -113,6 +116,12 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* MyAngryBird iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyAngryBird iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		220E330A1D6C93B7006DBE0F /* CardPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CardPool.cpp; sourceTree = "<group>"; };
+		220E330B1D6C93B7006DBE0F /* CardPool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CardPool.hpp; sourceTree = "<group>"; };
+		22198DE81D6B3ADC005156B4 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
+		22198DE91D6B3ADC005156B4 /* Card.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Card.hpp; sourceTree = "<group>"; };
+		22198DEB1D6B416A005156B4 /* Person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
+		22198DEC1D6B416A005156B4 /* Person.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Person.hpp; sourceTree = "<group>"; };
 		22408E1C1D3A04B100552843 /* SignLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SignLayer.cpp; sourceTree = "<group>"; };
 		22408E1D1D3A04B100552843 /* SignLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SignLayer.hpp; sourceTree = "<group>"; };
 		22408E211D3A13B000552843 /* scv_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scv_button.png; sourceTree = "<group>"; };
@@ -324,6 +333,12 @@
 				227AF6501D465018006BF1AE /* LifeBody.hpp */,
 				227AF6521D47AFB2006BF1AE /* Command.cpp */,
 				227AF6531D47AFB2006BF1AE /* Command.hpp */,
+				22198DE81D6B3ADC005156B4 /* Card.cpp */,
+				22198DE91D6B3ADC005156B4 /* Card.hpp */,
+				22198DEB1D6B416A005156B4 /* Person.cpp */,
+				22198DEC1D6B416A005156B4 /* Person.hpp */,
+				220E330A1D6C93B7006DBE0F /* CardPool.cpp */,
+				220E330B1D6C93B7006DBE0F /* CardPool.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -533,7 +548,10 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				22198DEA1D6B3ADC005156B4 /* Card.cpp in Sources */,
+				22198DED1D6B416A005156B4 /* Person.cpp in Sources */,
 				227AF6541D47AFB2006BF1AE /* Command.cpp in Sources */,
+				220E330C1D6C93B7006DBE0F /* CardPool.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

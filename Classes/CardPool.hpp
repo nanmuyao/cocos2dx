@@ -21,6 +21,10 @@ public:
     bool init();
     void setPool();
     void setXiPai();
+    Vector<Card *>& getVecCard()
+    {
+        return m_Vec_Card;
+    }
 private:
     Vector<Card *> m_Vec_Card;
 };

@@ -17,6 +17,9 @@ using namespace cocos2d::ui;
 
 World::World()
 :cardPool(NULL)
+,personA(NULL)
+,personB(NULL)
+,personC(NULL)
 {
     
 }
@@ -56,35 +59,28 @@ void World::setCard()
     cardPool = CardPool::create();
 }
 
-vector<int> getRandom(int total)
-{
-    srand((int)time(NULL));
-    std::vector<int> input = *new std::vector<int>();
-    for (int i = 0; i < total; i++) {
-        input.push_back(i);
-    }
-    vector<int> output = *new vector<int>();
-    
-    int end = total;
-    for (int i = 0; i < total; i++) {
-        vector<int>::iterator iter = input.begin();
-        int num = rand()%end;
-        iter = iter+num;
-        output.push_back(*iter);
-        input.erase(iter);
-        end--;
-    }
-    
-    return output;
-}
-
 void World::setPerson()
 {
-
+    personA = Person::create();
+    personB = Person::create();
+    personC = Person::create();
+    //发牌
+    Vector<Card*> vecCard = cardPool->getVecCard();
+    for (int i = 0; i < 52; i++) {
+        if (i%3==0) {
+            personA->setCard(vecCard.at(i));
+        }else if (i%3 == 1)
+        {
+            personB->setCard(vecCard.at(i));
+        }else if(i%3 == 2)
+        {
+            personC->setCard(vecCard.at(i));
+        }
+    }
     
-    Person *personA = Person::create();
-    Person *personB = Person::create();
-    Person *personC = Person::create();
+    //显示扑克牌
+    personA->setData();
+    this->addChild(personA);
 }
 
 void World::update(float t)

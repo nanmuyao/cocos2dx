@@ -23,9 +23,11 @@ public:
     CREATE_FUNC(Person);
     bool init() override;
     void showResult();
+    
     void setCard(Card* card);
     void playCard();
     
+    void setData();
 private:
     Vector<Card *> m_Vec_Card;
 };

@@ -10,7 +10,9 @@
 #define Card_hpp
 
 #include <stdio.h>
+#include "ui/UIlayout.h"
 using namespace cocos2d;
+using namespace cocos2d::ui;
 
 enum CardColr
 {
@@ -23,6 +25,8 @@ enum CardColr
 class Card : public CCLayer
 {
 public:
+    Card();
+    ~Card();
     CREATE_FUNC(Card);
     bool init() override;
     void setCard(int color,int num);
@@ -30,6 +34,8 @@ public:
 public:
     int cardNum;
     int cardColor;
+    Layout *layout;
+    LabelTTF *lableNum;
 };
 
 #endif /* Card_hpp */
