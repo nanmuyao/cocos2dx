@@ -14,17 +14,25 @@
 using namespace cocos2d;
 using namespace cocos2d::ui;
 
-enum CardColr
-{
-    colorRed = 1,
-    colorBlack = 2,
-    colorFP = 3,
-    colorHZ = 4
-};
-
 class Card : public CCLayer
 {
 public:
+    
+    enum CardColr
+    {
+        colorRed = 1,
+        colorBlack = 2,
+        colorFP = 3,
+        colorHZ = 4
+    };
+    
+    typedef enum _CardStatus
+    {
+        card_status_None = 1,
+        card_status_chuPai = 2,
+        card_status_noChuPai = 3
+    }CardStatus;
+    
     Card();
     ~Card();
     CREATE_FUNC(Card);
@@ -39,6 +47,7 @@ public:
     Layout *layout;
     LabelTTF *lableNum;
     LabelTTF *lableColor;
+    CardStatus status;
 };
 
 #endif /* Card_hpp */

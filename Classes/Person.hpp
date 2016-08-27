@@ -28,8 +28,10 @@ public:
     void playCard();
     
     void setData();
+    void setChuPai(Card* card);
 private:
     Vector<Card *> m_Vec_Card;
+    Vector<Card *> m_Vec_Card_ChuPai;
 };
 
 #endif /* Person_hpp */

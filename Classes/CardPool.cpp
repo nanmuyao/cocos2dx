@@ -28,17 +28,17 @@ void CardPool::setPool()
         if (index == 0)
             index +=1;
         switch (index) {
-            case colorRed:
-                color = colorRed;
+            case Card::colorRed:
+                color = Card::colorRed;
                 break;
-            case colorBlack:
-                color = colorBlack;
+            case Card::colorBlack:
+                color = Card::colorBlack;
                 break;
-            case colorFP:
-                color = colorFP;
+            case Card::colorFP:
+                color = Card::colorFP;
                 break;
-            case colorHZ:
-                color = colorHZ;
+            case Card::colorHZ:
+                color = Card::colorHZ;
                 break;
             default:
                 CCLOG("set color error");

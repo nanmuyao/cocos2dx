@@ -11,6 +11,7 @@ Card::Card()
 :layout(NULL)
 ,lableNum(NULL)
 ,lableColor(NULL)
+,status(card_status_noChuPai)
 {
     
 }
@@ -49,7 +50,6 @@ bool Card::init()
     return true;
 }
 
-
 void Card::layoutTouchEvent(Ref *pSender, Widget::TouchEventType type)
 {
     Layout* layout = static_cast<Layout*>(pSender);
@@ -65,9 +65,16 @@ void Card::layoutTouchEvent(Ref *pSender, Widget::TouchEventType type)
             break;
             
         case Widget::TouchEventType::ENDED:
-            layout->setVisible(false);
-            CCLOG("%s:","ENDED");
+            //layout->setVisible(false);
+            if (status == card_status_noChuPai) {
+                status = card_status_chuPai;
+                layout->runAction(MoveBy::create(0.2f, Vec2(layout->getPositionX(), layout->getPositionY() + 30)));
+            }else if (status == card_status_chuPai){
+                layout->runAction(MoveBy::create(0.2f, Vec2(layout->getPositionX(), layout->getPositionY() - 60)));
+                status = card_status_noChuPai;
+            }
             
+            CCLOG("%s:","ENDED");
             break;
         case Widget::TouchEventType::CANCELED:
             CCLOG("%s:","MOVED");
@@ -103,8 +110,6 @@ void Card::touchEvent(Ref *pSender, Widget::TouchEventType type)
 //            break;
 //    }
 }
-
-
 
 void Card::setCard(int color,int num)
 {

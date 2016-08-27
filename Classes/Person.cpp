@@ -45,6 +45,9 @@ void Person::setData()
     layout->setContentSize(Size(visibleSize.width , visibleSize.height/2));
     this->addChild(layout);
     
+    //出牌按钮
+    
+    
     //create card
     int index = 0;
     for (Vector<Card* >::iterator iter = m_Vec_Card.begin(); iter != m_Vec_Card.end(); iter++) {
@@ -56,6 +59,12 @@ void Person::setData()
         CCLOG("cardColor=%d",(*iter)->cardColor);
         index++;
     }
+}
+//玩家控制排好，还是在排中来模拟出牌呢
+//玩家选牌打牌的规则
+void Person::setChuPai(Card *card)
+{
+    m_Vec_Card_ChuPai.pushBack(card);
 }
 
 void Person::setCard(Card* card)
