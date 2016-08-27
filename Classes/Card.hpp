@@ -31,11 +31,14 @@ public:
     bool init() override;
     void setCard(int color,int num);
 
+    void touchEvent(Ref *pSender, Widget::TouchEventType type);
+    void layoutTouchEvent(Ref *pSender, Widget::TouchEventType type);
 public:
     int cardNum;
     int cardColor;
     Layout *layout;
     LabelTTF *lableNum;
+    LabelTTF *lableColor;
 };
 
 #endif /* Card_hpp */

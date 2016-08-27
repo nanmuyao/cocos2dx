@@ -50,7 +50,7 @@ void Person::setData()
     for (Vector<Card* >::iterator iter = m_Vec_Card.begin(); iter != m_Vec_Card.end(); iter++) {
         layout->addChild(*iter);
         int width = (*iter)->getContentSize().width;
-        (*iter)->setPosition(Vec2(width + width * index,
+        (*iter)->setPosition(Vec2(index * 10 + width * index,
                                   (*iter)->getPositionY()));
         CCLOG("num=%d",(*iter)->cardNum);
         CCLOG("cardColor=%d",(*iter)->cardColor);
