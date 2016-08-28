@@ -22,12 +22,27 @@ bool CardPool::init()
 void CardPool::setPool()
 {
     int color = 0;
-    for (int i = 1; i <= MaxCardNum; i++) {
+    int index = 0;
+    for (int i = 1; i <= 54; i++)
+    {
         Card *card = Card::create();
-        int index = i/13;
-        if (index == 0)
-            index +=1;
-        switch (index) {
+        index = i/13 + 1; // 1/13 = 0; 13/13 = 0;  14/13 = 1;
+        if (i == 13)
+        {
+            index = 1;
+        }else if (i == 26)
+        {
+            index = 2;
+        }else if (i == 39)
+        {
+            index = 3;
+        }else if (i == 52)
+        {
+            index = 4;
+        }
+        
+        switch (index)
+        {
             case Card::colorRed:
                 color = Card::colorRed;
                 break;
@@ -50,9 +65,17 @@ void CardPool::setPool()
         if (cardNum == 0) {
             cardNum = 13;
         }
-
-//        CCLOG("color=%d",color);
-//        CCLOG("cardNum=%d",cardNum);
+        
+        if (i == 53) {
+            color = Card::colorXW;
+            cardNum = 53;
+        }else if (i == 54){
+            color = Card::colorDW;
+            cardNum = 54;
+        }
+        
+        CCLOG("color=%d",color);
+        CCLOG("cardNum=%d",cardNum);
         card->setCard(color, cardNum);
         m_Vec_Card.pushBack(card);
     }

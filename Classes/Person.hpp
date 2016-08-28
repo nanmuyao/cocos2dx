@@ -29,6 +29,8 @@ public:
     
     void setData();
     void setChuPai(Card* card);
+
+    void layoutButtonTouchEvent(Ref *pSender, Widget::TouchEventType type);
 private:
     Vector<Card *> m_Vec_Card;
     Vector<Card *> m_Vec_Card_ChuPai;

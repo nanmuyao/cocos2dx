@@ -12,6 +12,7 @@ Card::Card()
 ,lableNum(NULL)
 ,lableColor(NULL)
 ,status(card_status_noChuPai)
+,cardColor(-1)
 {
     
 }
@@ -114,6 +115,7 @@ void Card::touchEvent(Ref *pSender, Widget::TouchEventType type)
 void Card::setCard(int color,int num)
 {
     cardNum = num;
+    cardColor = color;
     std::string strNum = cocos2d::StringUtils::toString(num);
     std::string strColor;
     if (color == colorRed) {

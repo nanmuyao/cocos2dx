@@ -23,7 +23,9 @@ public:
         colorRed = 1,
         colorBlack = 2,
         colorFP = 3,
-        colorHZ = 4
+        colorHZ = 4,
+        colorXW = 5,
+        colorDW = 6
     };
     
     typedef enum _CardStatus
