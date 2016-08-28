@@ -13,6 +13,7 @@
 using namespace cocos2d::ui;
 
 Person::Person()
+:cardType(cadType_None)
 {
     
 }
@@ -28,9 +29,72 @@ bool Person::init()
     return true;
 }
 
+bool Person::isValid()
+{
+    //check card type
+    int cardTemp1 = 0;
+    int cardTemp2 = 0;
+    int cardTemp3 = 0;
+    int cardTemp4 = 0;
+    int cardTemp5 = 0;
+    int cardTemp6 = 0;
+    int cardTemp7 = 0;
+    int cardTemp8 = 0;
+    int cardTemp9 = 0;
+    int cardTemp10 = 0;
+    int cardTemp11 = 0;
+    int cardTemp12 = 0;
+    int cardTemp13 = 0;
+
+    int cardSize = m_Vec_Card_ChuPai.size();
+//    for(Vector<Card *>::iterator iter = m_Vec_Card_ChuPai.begin();iter != m_Vec_Card_ChuPai.end();iter++)
+//    {
+//        cardSize++;
+//    }
+    if (cardSize==1) {
+        cardType = cardType_Dan;
+        return true;
+    }
+    
+    if(cardSize == 2)
+    {
+        if (m_Vec_Card_ChuPai.at(0)->cardNum == m_Vec_Card_ChuPai.at(1)->cardNum) {
+            cardType = cardType_Shuang;
+            return true;
+        }
+    }
+    //三张牌如果玩家手里已经没有牌了事可以出的
+    if(cardSize == 3)
+    {
+        if (m_Vec_Card_ChuPai.at(0)->cardNum == m_Vec_Card_ChuPai.at(1)->cardNum == m_Vec_Card_ChuPai.at(2)->cardNum)
+        {
+            cardType = cardType_San;
+            return true;
+        }
+    }
+    
+    //四张牌 王炸 三代一
+    if(cardSize == 4)
+    {
+        if (m_Vec_Card_ChuPai.at(0)->cardNum == m_Vec_Card_ChuPai.at(1)->cardNum == m_Vec_Card_ChuPai.at(2)->cardNum)
+        {
+            cardType = cardType_Si_SanDaiYi;
+            if (m_Vec_Card_ChuPai.at(4) == m_Vec_Card_ChuPai.at(0)) {
+                cardType = cardType_Si_WangZha;
+            }
+        }
+    }
+    
+    //后续牌型的判断
+    
+    return true;
+}
+
 void Person::playCard()
 {
-    
+    if (isValid()) {
+        //chu pai
+    }
 }
 
 void Person::setData()
@@ -84,15 +148,11 @@ void Person::layoutButtonTouchEvent(Ref *pSender, Widget::TouchEventType type)
             break;
             
         case Widget::TouchEventType::ENDED:
-            CCLOG("出牌");
-            for (Vector<Card*>::iterator iter = m_Vec_Card.begin(); iter != m_Vec_Card.end(); iter++) {
-                if ((*iter)->status == Card::card_status_chuPai) {
-                    CCLOG("cardColor=%d",(*iter)->cardColor);
-                    CCLOG("cardNum=%d",(*iter)->cardNum);
-                    m_Vec_Card_ChuPai.pushBack(*iter);
-                }
-            }
             CCLOG("%s:","ENDED");
+            CCLOG("出牌");
+            
+            getChuPai();
+            
             break;
         case Widget::TouchEventType::CANCELED:
             CCLOG("%s:","MOVED");
@@ -100,13 +160,21 @@ void Person::layoutButtonTouchEvent(Ref *pSender, Widget::TouchEventType type)
         default:
             break;
     }
-
 }
 
 //玩家选牌打牌的规则
-void Person::setChuPai(Card *card)
+void Person::getChuPai()
 {
-    m_Vec_Card_ChuPai.pushBack(card);
+    m_Vec_Card_ChuPai.clear();
+    for (Vector<Card*>::iterator iter = m_Vec_Card.begin(); iter != m_Vec_Card.end(); iter++) {
+        if ((*iter)->status == Card::card_status_chuPai) {
+            CCLOG("cardColor=%d",(*iter)->cardColor);
+            CCLOG("cardNum=%d",(*iter)->cardNum);
+            m_Vec_Card_ChuPai.pushBack(*iter);
+        }
+    }
+    
+    
 }
 
 void Person::setCard(Card* card)
