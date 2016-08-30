@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "CardPool.hpp"
 #include "Person.hpp"
+#include <list>
 
 using namespace cocos2d;
 
@@ -32,6 +33,7 @@ public:
 private:
     int sizeX;
     int sizeY;
+    list<Person *> m_LPerson;
     Layer* layer;
     CardPool *cardPool;
     Person *personA;

@@ -32,19 +32,19 @@ bool Person::init()
 bool Person::isValid()
 {
     //check card type
-    int cardTemp1 = 0;
-    int cardTemp2 = 0;
-    int cardTemp3 = 0;
-    int cardTemp4 = 0;
-    int cardTemp5 = 0;
-    int cardTemp6 = 0;
-    int cardTemp7 = 0;
-    int cardTemp8 = 0;
-    int cardTemp9 = 0;
-    int cardTemp10 = 0;
-    int cardTemp11 = 0;
-    int cardTemp12 = 0;
-    int cardTemp13 = 0;
+    int cardNum1 = 0;
+    int cardNum2 = 0;
+    int cardNum3 = 0;
+    int cardNum4 = 0;
+    int cardNum5 = 0;
+    int cardNum6 = 0;
+    int cardNum7 = 0;
+    int cardNum8 = 0;
+    int cardNum9 = 0;
+    int cardNum10 = 0;
+    int cardNum11 = 0;
+    int cardNum12 = 0;
+    int cardNum13 = 0;
 
     int cardSize = m_Vec_Card_ChuPai.size();
 //    for(Vector<Card *>::iterator iter = m_Vec_Card_ChuPai.begin();iter != m_Vec_Card_ChuPai.end();iter++)
@@ -82,18 +82,37 @@ bool Person::isValid()
             if (m_Vec_Card_ChuPai.at(4) == m_Vec_Card_ChuPai.at(0)) {
                 cardType = cardType_Si_WangZha;
             }
+            return true;
         }
+        
     }
     
     //后续牌型的判断
+    if(cardSize == 5)
+    {
+        cardNum1 = m_Vec_Card_ChuPai.at(0)->cardNum;
+        cardNum2 = m_Vec_Card_ChuPai.at(1)->cardNum;
+        cardNum3 = m_Vec_Card_ChuPai.at(2)->cardNum;
+        cardNum4 = m_Vec_Card_ChuPai.at(3)->cardNum;
+        cardNum5 = m_Vec_Card_ChuPai.at(4)->cardNum;
+        
+        if ((cardNum2 - cardNum1 ==1)&&(cardNum3 - cardNum2 ==1)&&(cardNum4 - cardNum3 ==1)&&(cardNum5 - cardNum4 ==1)) {
+            
+            return true;
+        }
+    }
     
-    return true;
+    
+    
+    return false;
 }
 
 void Person::playCard()
 {
     if (isValid()) {
-        //chu pai
+        CCLOG("can play card");
+    }else {
+        CCLOG("no can play card");
     }
 }
 
@@ -118,6 +137,14 @@ void Person::setData()
     layoutButton->setTouchEnabled(true);
     layoutButton->setPosition(Vec2(50, layout->getContentSize().height - layoutButton->getContentSize().height));
     layout->addChild(layoutButton);
+    
+    //对牌进行排序
+    struct myclass {
+        bool operator() (Card *card1, Card *card2) { return (card1->cardNum<card2->cardNum); }
+    } myobject;
+    
+    // using object as comp
+    std::sort(m_Vec_Card.begin(), m_Vec_Card.end(), myobject);
     
     //create card
     int index = 0;
@@ -152,6 +179,7 @@ void Person::layoutButtonTouchEvent(Ref *pSender, Widget::TouchEventType type)
             CCLOG("出牌");
             
             getChuPai();
+            playCard();
             
             break;
         case Widget::TouchEventType::CANCELED:
@@ -173,8 +201,6 @@ void Person::getChuPai()
             m_Vec_Card_ChuPai.pushBack(*iter);
         }
     }
-    
-    
 }
 
 void Person::setCard(Card* card)

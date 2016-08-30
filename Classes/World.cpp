@@ -17,6 +17,7 @@ using namespace cocos2d::ui;
 
 World::World()
 :cardPool(NULL)
+,m_LPerson(NULL)
 ,personA(NULL)
 ,personB(NULL)
 ,personC(NULL)
@@ -62,8 +63,11 @@ void World::setCard()
 void World::setPerson()
 {
     personA = Person::create();
+    m_LPerson.push_back(personA);
     personB = Person::create();
+    m_LPerson.push_back(personB);
     personC = Person::create();
+    m_LPerson.push_back(personC);
     //发牌
     Vector<Card*> vecCard = cardPool->getVecCard();
     for (int i = 0; i < 52; i++) {
