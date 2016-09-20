@@ -57,6 +57,7 @@ private:
     Vector<Card *> m_Vec_Card;
     Vector<Card *> m_Vec_Card_ChuPai;
     CardType cardType;
+    Layout *layoutbg;
 };
 
 #endif /* Person_hpp */

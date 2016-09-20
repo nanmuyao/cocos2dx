@@ -25,7 +25,25 @@ Person::~Person()
 
 bool Person::init()
 {
+    //background
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    layoutbg = Layout::create();
+    layoutbg->setBackGroundColorType(cocos2d::ui::Layout::BackGroundColorType::SOLID);
+    layoutbg->setColor(Color3B(0,100,0));
+    //layout->addTouchEventListener(CC_CALLBACK_2(SignLayer::layoutTouchEvent,this));
+    layoutbg->setTouchEnabled(true);
+    layoutbg->setContentSize(Size(visibleSize.width , visibleSize.height/2));
+    this->addChild(layoutbg);
     
+    //添加出牌的按钮
+    auto layoutButton = Layout::create();
+    layoutButton->setContentSize(Size(Vec2(50,50)));
+    layoutButton->setBackGroundColorType(cocos2d::ui::Layout::BackGroundColorType::SOLID);
+    layoutButton->setColor(Color3B(0,200,0));
+    layoutButton->addTouchEventListener(CC_CALLBACK_2(Person::layoutButtonTouchEvent,this));
+    layoutButton->setTouchEnabled(true);
+    layoutButton->setPosition(Vec2(50, layoutbg->getContentSize().height - layoutButton->getContentSize().height));
+    this->addChild(layoutButton);
     return true;
 }
 
@@ -109,34 +127,31 @@ bool Person::isValid()
 
 void Person::playCard()
 {
-    if (isValid()) {
-        CCLOG("can play card");
-    }else {
+    if (isValid())
+    {
+
+        for(Vector<Card *>::iterator iter = m_Vec_Card_ChuPai.begin(); iter != m_Vec_Card_ChuPai.end();iter++)
+        {
+            for(Vector<Card *>::iterator iterCard = m_Vec_Card.begin(); iterCard != m_Vec_Card.end();iterCard++)
+            {
+                if ((*iter)->cardNum == (*iterCard)->cardNum && (*iter)->cardColor == (*iterCard)->cardColor)
+                {
+                    m_Vec_Card.erase(iterCard);
+                    break;
+                }
+            }
+        }
+        
+    }else
+    {
         CCLOG("no can play card");
     }
+    setData();
 }
 
 void Person::setData()
 {
-    //background
-    Size visibleSize = Director::getInstance()->getVisibleSize();
-    auto layout = Layout::create();
-    layout->setBackGroundColorType(cocos2d::ui::Layout::BackGroundColorType::SOLID);
-    layout->setColor(Color3B(0,100,0));
-    //layout->addTouchEventListener(CC_CALLBACK_2(SignLayer::layoutTouchEvent,this));
-    layout->setTouchEnabled(true);
-    layout->setContentSize(Size(visibleSize.width , visibleSize.height/2));
-    this->addChild(layout);
-    
-    //添加出牌的按钮
-    auto layoutButton = Layout::create();
-    layoutButton->setContentSize(Size(Vec2(50,50)));
-    layoutButton->setBackGroundColorType(cocos2d::ui::Layout::BackGroundColorType::SOLID);
-    layoutButton->setColor(Color3B(0,200,0));
-    layoutButton->addTouchEventListener(CC_CALLBACK_2(Person::layoutButtonTouchEvent,this));
-    layoutButton->setTouchEnabled(true);
-    layoutButton->setPosition(Vec2(50, layout->getContentSize().height - layoutButton->getContentSize().height));
-    layout->addChild(layoutButton);
+    layoutbg->removeAllChildren();
     
     //对牌进行排序
     struct myclass {
@@ -149,7 +164,7 @@ void Person::setData()
     //create card
     int index = 0;
     for (Vector<Card* >::iterator iter = m_Vec_Card.begin(); iter != m_Vec_Card.end(); iter++) {
-        layout->addChild(*iter);
+        layoutbg->addChild(*iter);
         int width = (*iter)->getContentSize().width;
         (*iter)->setPosition(Vec2(index * 10 + width * index,
                                   (*iter)->getPositionY()));
@@ -163,7 +178,7 @@ void Person::setData()
 void Person::layoutButtonTouchEvent(Ref *pSender, Widget::TouchEventType type)
 {
     Layout* layout = static_cast<Layout*>(pSender);
-    
+    CCLOG("Test");
     switch (type)
     {
         case Widget::TouchEventType::BEGAN:
